@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Customizable Confirm Demo</title>
+		<script type="text/javascript" src="custom_confirm.js"></script>
+		<script type='text/javascript'>
+			function say_foo() {
+				alert('foo');
+			}
+			function say_bar() {
+				alert('bar');
+			}
+			var myButtons = [
+				{name:"Say Foo", func:say_foo},
+				{name:"Say Bar", func:say_bar},
+				{name:"Cancel", func:function(){} }
+			];
+		</script>
+	</head>
+	<body>
+		<h1>Customizable Confirm Demo</h1>
+		<p>Demo for custom_confirm() JavaScript function</p>
+		<button onclick='custom_confirm("Say foo or bar?",myButtons);'>
+			Show Demo
+		</button>
+	</body>
+</html>
