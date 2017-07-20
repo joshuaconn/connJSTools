@@ -19,7 +19,7 @@ function svgRenderTriangle(polygonElmnt, radius, center={x:0,y:0}, rotate=0) {
  *  @param center (point) object with x and y properties
  *  @param rotation in radians
  */
-function svgRenderSquare(polygonElmnt, radius, center={x:0,y:0}, rotate=0) {
+function svgRenderSquare(polygonElmnt, radius, center={x:0,y:0}, rotate=Math.PI/4) {
     svgRenderNGon(polygonElmnt, radius, center, 4, rotate);
 }
 
