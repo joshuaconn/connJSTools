@@ -53,12 +53,13 @@ function svgRenderHexagon(polygonElmnt, radius, center={x:0,y:0}, rotate=0) {
  *  @param n 3=triangle (default) 4=square, 5=pentagon, ....
  */
 function svgRenderNGon(polygonElmnt, radius, center={x:0,y:0}, n=3, rotate=0) {
-	var point = {x:0,y:0}, pointStr="";
-  var angleDelta = Math.PI*2/n;
-  for(p=1; p<=n; p++) {
-    point.x=Math.sin(angleDelta*p+rotate)*radius+center.x; 
-    point.y=Math.cos(angleDelta*p+rotate)*radius+center.y;
-    pointStr+=point.x+","+point.y+" ";
-  }
-  polygonElmnt.setAttribute("points", pointStr);
+    if (n<3) throw "Polygons must have 3 or more sides.";
+    var point = {x:0,y:0}, pointStr="";
+    var angleDelta = Math.PI*2/n;
+    for(p=1; p<=n; p++) {
+        point.x=Math.sin(angleDelta*p+rotate)*radius+center.x; 
+        point.y=Math.cos(angleDelta*p+rotate)*radius+center.y;
+        pointStr+=point.x+","+point.y+" ";
+    }
+    polygonElmnt.setAttribute("points", pointStr);
 }
